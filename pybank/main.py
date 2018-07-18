@@ -15,7 +15,7 @@ with open(csvpath) as csvfile:
     print('Financial Analysis')
     print('----------------------------')
     for row in reader:
-        if cur_row > 1:
+        if cur_row > 1:       
             last_mth_rev = this_mth_rev
         this_mth_rev = float(row['Revenue'])
         if cur_row > 1:
@@ -35,3 +35,10 @@ print("Total: $",sum_rev)
 print("Average Change: $",round((total_chg/(total_mth-1)),2))
 print("Greatest Increase in Profits: ",mth_grt_inc_rev, ' ($',int(grt_inc_rev),')')
 print("Greatest Decrease in Profits: ",mth_grt_dec_rev, ' ($',int(grt_dec_rev),')')
+text='Total Months: '+str(total_mth)+'\nTotal: $'+str(sum_rev)
+text=text+'\nAverage Change: $'+str(total_chg/(total_mth-1))
+text=text+'\nGreatest Increase in Profits: '+ str(mth_grt_inc_rev)+' ($'+str(int(grt_inc_rev))+')'
+text=text+'\nGreatest Decrease in Profits: '+ str(mth_grt_dec_rev)+' ($'+str(int(grt_dec_rev))+')'
+savefile= open('pybankout.txt','w')
+savefile.write(text)
+savefile.close()
