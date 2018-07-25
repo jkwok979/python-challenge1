@@ -1,0 +1,5 @@
+Total Months: 41
+Total: $18971412.0
+Average Change: $-6758.975
+Greatest Increase in Profits: 16-Feb ($1837235)
+Greatest Decrease in Profits: 14-Aug ($-1779747)
